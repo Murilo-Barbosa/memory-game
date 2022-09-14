@@ -1,5 +1,4 @@
 const grid = document.querySelector(".grid");
-
 const cards = [
   "beth",
   "brain",
@@ -13,7 +12,6 @@ const cards = [
   "scroopy",
   "summer",
 ];
-
 // Função responsavel por criar um elemento de carta
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -28,6 +26,3 @@ const createCard = () => {
 
   card.appendChild(front);
   card.appendChild(back);
-
-  return card;
-};
