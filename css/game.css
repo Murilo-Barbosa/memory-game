@@ -1,17 +1,42 @@
+main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 50px;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+}
+
+header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px 20px ;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  
+
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
   width: 100%;
   max-width: 800px;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .card {
   width: 100%;
   aspect-ratio: 3/4;
   position: relative;
-  transition: all 600ms ease;
+  transition: all 500ms ease;
   transform-style: preserve-3d;
 }
 .face {

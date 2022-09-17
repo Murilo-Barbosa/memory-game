@@ -1,4 +1,6 @@
 const grid = document.querySelector(".grid");
+const player = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 const characters = [
   "beth",
   "jerry",
@@ -12,15 +14,12 @@ const characters = [
   "summer",
 ];
 
-
-// Função responsavel por criar um elemento de forma dinamica, colocando tipo e classe como parametro!
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
   element.className = className;
   return element;
 };
 
-//Função responsavel por criar a carta!
 const createCard = (character) => {
   const card = createElement("div", "card");
   const front = createElement("div", "face front");
@@ -54,7 +53,9 @@ const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card')
 
   if (disabledCards.length == 20) {
-    alert('Congratulations, you are the best!!')
+
+      clearInterval(this.loop);
+      alert(`Congratulations ${player.innerHTML}! Your time is ${timer.innerHTML}!`)
   }
 }
 
@@ -106,6 +107,27 @@ const revealCard = ({target}) => {
   
 }
 
+//função responsavel pelo cronometro do jogo!
+const startTimer = () => {
+
+  this.loop = setInterval(() => {
+
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+  }, 1000)
+
+}
+
+//Carrega o Jogo!
+window.onload = () => {
+
+  player.innerHTML = localStorage.getItem('player');
+
+  startTimer();
+
+  loadGame();
 
 
-loadGame();
+}
+
+
